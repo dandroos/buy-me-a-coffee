@@ -21,7 +21,7 @@ const IndexPage = props => {
     }, 3000)
   }, [])
 
-  let stripe = window.Stripe("pk_test_Ys9qsdCBkLY8mW4rEYPZnNLw00vwD3ZAkb")
+  let stripe = window.Stripe(process.env.STRIPE_TEST_KEY)
 
   const redirectToCheckout = async e => {
     e.preventDefault()
