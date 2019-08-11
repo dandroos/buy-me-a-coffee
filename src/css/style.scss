@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Playfair+Display&display=swap");
+
+$font-family-sans-serif: "Playfair Display";
+// $font-family-base: "Montserrat";
+$body-font: "Montserrat";
+
+$primary: #893d2e;
+$body-bg: lighten($primary, 45%);
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+body {
+  cursor: default;
+}
+
+.bg {
+  &-vector {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    z-index: -50;
+  }
+
+  &-coffee {
+    position: fixed;
+    opacity: 0.1 !important;
+    z-index: -20;
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    max-height: 100vh;
+  }
+}
+
+.svg {
+  position: absolute;
+  max-width: 100%;
+
+  &-canvas {
+    height: 450px;
+    position: relative;
+    margin: 1rem;
+    width: 450px;
+  }
+
+  &-coffee {
+    top: 50%;
+    left: 40%;
+    animation: coffee 12s infinite alternate;
+  }
+
+  &-cake {
+    top: 25%;
+    left: 70%;
+    height: 25%;
+    z-index: -10;
+    animation: cake 12s infinite alternate;
+  }
+
+  &-smile {
+    animation: smile 1s infinite alternate;
+  }
+
+  &-asleep {
+    width: 80%;
+    max-width: 400px;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+p,
+span {
+  font-family: $body-font;
+}
+
+#why-modal-btn {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 50;
+}
+
+@media (max-width: 992px) {
+  .bg-vector {
+    left: -180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bg-vector {
+    left: -300px;
+  }
+
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .bg-vector {
+    left: -550px;
+  }
+}
+
+@keyframes cake {
+  from {
+    transform: translatex(0) scale(1);
+  }
+  to {
+    transform: translatex(-15px) scale(1.25);
+  }
+}
+
+@keyframes coffee {
+  from {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  to {
+    transform: translate(-45%, -50%) scale(0.95);
+  }
+}
+
+@keyframes smile {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1) translatey(-10px);
+  }
+}
